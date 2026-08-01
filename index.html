@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AseGlyph Pro - Coming Soon</title>
+
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111233862', 'ym');
+
+        ym(111233862, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/111233862" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <style>
+        @font-face {
+            font-family: 'Tinyglyph';
+            src: url('assets/Tinyglyph-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #2b2b2b;
+            font-family: 'Tinyglyph', monospace;
+            -webkit-font-smoothing: none;
+            font-smooth: never;
+            text-rendering: optimizeSpeed;
+            overflow: hidden;
+        }
+
+        #wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: url('https://img.itch.zone/aW1nLzI4NzEwOTk0LnBuZw==/original/lc455Y.png'), auto !important;
+
+            background-image:
+                linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222),
+                linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222);
+            background-size: 64px 64px;
+            background-position: 0 0, 32px 32px;
+            background-attachment: fixed !important;
+        }
+
+        a, button, .itch-button {
+            cursor: url('https://img.itch.zone/aW1nLzI4NzEwOTcyLnBuZw==/original/sigLi6.png'), pointer !important;
+        }
+        p, h1, h2, span, div {
+            cursor: url('https://img.itch.zone/aW1nLzI4NzExMDcxLnBuZw==/original/U1Hpmz.png'), text !important;
+        }
+
+        ::selection { background-color: #d62424 !important; color: #fff !important; }
+        ::-moz-selection { background-color: #d62424 !important; color: #fff !important; }
+
+        .os-window {
+            width: 100%;
+            max-width: 500px;
+            background-color: #342f3a;
+            border: 2px solid #1a181e;
+            box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.6);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .os-header {
+            background-color: #1a181e;
+            color: #888888;
+            font-family: monospace;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 12px;
+            user-select: none;
+        }
+
+        .os-header-controls {
+            letter-spacing: 4px;
+            pointer-events: none;
+        }
+
+        .os-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .title {
+            color: #e8e2eb;
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px #1a181e;
+            line-height: 1;
+        }
+
+        .subtitle {
+            color: #e64539;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin: 10px 0 20px 0;
+        }
+
+        .description {
+            font-size: 24px;
+            color: #9c90a3;
+            line-height: 1.2;
+            margin: 0 0 30px 0;
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            height: 20px;
+            background-color: #1a181e;
+            border: 2px solid #2b2b2b;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-bar-fill {
+            height: 100%;
+            background-color: #d62424;
+            width: 0%;
+            animation: loadAnim 5s infinite;
+        }
+
+        .loading-status {
+            color: #565064;
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        .itch-button {
+            display: inline-block;
+            background-color: #2b2b2b;
+            color: #e8e2eb;
+            border: 2px solid #1a181e;
+            padding: 12px 24px;
+            font-size: 24px;
+            line-height: 1;
+            text-decoration: none;
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.6);
+            transition: transform 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        .itch-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #ff8c00;
+            color: #ffffff;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        @keyframes loadAnim {
+            0% { width: 0%; }
+            30% { width: 45%; }
+            60% { width: 45%; }
+            80% { width: 85%; }
+            95% { width: 98%; }
+            100% { width: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <div class="os-window">
+
+        <div class="os-header">
+            <span>aseglyph_web_compiler.exe</span>
+            <span class="os-header-controls">— □ ×</span>
+        </div>
+
+        <div class="os-body">
+            <h1 class="title">SYSTEM BOOTING...</h1>
+            <div class="subtitle">× ┈ × ┈ × ┈ × ┈ ×</div>
+
+            <p class="description">
+                Something awesome is currently in development.<br>
+                AseGlyph Pro will have its own dedicated web-converter right here!
+            </p>
+
+            <div class="loading-bar-container">
+                <div class="loading-bar-fill"></div>
+            </div>
+            <div class="loading-status">Standby... loading modules<span class="blink">_</span></div>
+
+            <a href="https://sodedromme.itch.io/" target="_blank" class="itch-button">
+                > Get other plugins on Itch.io <
+            </a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
